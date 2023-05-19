@@ -20,5 +20,5 @@ export class CatalogDetail extends Base {
     catalogId!: string;
 
   @Column({ nullable: true, default: true })
-    status?: boolean;
+    active?: boolean;
 }

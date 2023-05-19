@@ -7,7 +7,7 @@ define(CatalogDetail, () => {
   const code = faker.commerce.product();
   const name = faker.commerce.productName();
   const description = faker.commerce.productDescription();
-  const status = faker.datatype.boolean();
+  const active = faker.datatype.boolean();
   const creationUser = faker.name.fullName();
 
   const catalogDetail = new CatalogDetail();
@@ -16,7 +16,7 @@ define(CatalogDetail, () => {
   catalogDetail.description = description;
   catalogDetail.catalogId = factory(Catalog)() as any;
   catalogDetail.creationUser = creationUser;
-  catalogDetail.status = status;
+  catalogDetail.active = active;
 
   return catalogDetail;
 });

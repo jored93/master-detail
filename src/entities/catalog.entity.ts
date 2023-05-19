@@ -13,5 +13,5 @@ export class Catalog extends Base {
     level?: number;
 
   @Column({ nullable: true, default: true })
-    status?: boolean;
+    active?: boolean;
 }

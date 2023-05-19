@@ -22,5 +22,5 @@ export class CatalogUpdateDTO {
 
     @IsBoolean()
     @IsOptional()
-      status?: boolean;
+      active?: boolean;
 }

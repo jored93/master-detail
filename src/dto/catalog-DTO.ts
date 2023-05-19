@@ -22,5 +22,5 @@ export class CatalogDTO {
 
   @IsBoolean()
   @IsOptional()
-    status?: boolean;
+    active?: boolean;
 }

@@ -2,7 +2,7 @@ import { Service } from 'typedi';
 import { getRepository } from 'typeorm';
 import { CatalogDetail } from '@entities/catalog-detail.entity';
 import { CatalogDetailInterface } from '@interfaces';
-
+import { IQueryOptions } from 'src/interfaces/query/query-options.interface';
 import { OptionQuery } from 'src/queries/option.query';
 import { QueryService } from '@services/query.service';
 
@@ -13,6 +13,14 @@ export class CatalogDetailService {
   private readonly catalogDetailRepository = getRepository<CatalogDetail>(CatalogDetail);
 
   findAll(query: OptionQuery, where?: any) {
+    const options: IQueryOptions = {};
+    if (query.relations && query.relations?.length > 0) {
+      query.relations += ',catalog';
+    } else {
+      query.relations = 'catalog';
+    }
+    options.where = { ...options.where };
+    options.relations = this.queryService.getRelations(query.relations);
     return this.queryService.paginate(this.catalogDetailRepository, query, where);
   }
 

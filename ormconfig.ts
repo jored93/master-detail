@@ -22,9 +22,9 @@ const config: ConnectionOptions = {
   synchronize: TYPEORM_SYNCHRONIZE === 'true',
   logging: TYPEORM_LOGGING === 'true',
   ssl: true as boolean,
-  extra: {
+  /* extra: {
     cert: '/home/jored/projects/master-detail/root.crt'
-  },
+  }, */
   entities: [
     PRODUCTION_ENV ? 'dist/src/entities/**/*.js' : 'src/entities/**/*.ts'
   ],

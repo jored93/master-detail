@@ -25,7 +25,7 @@
     "prepare": "husky install"
   },
   "keywords": [],
-  "author": "devenginec",
+  "author": "jored93",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.1322.0",

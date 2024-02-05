@@ -6,11 +6,11 @@ export class Catalog extends Base {
   @Index({ unique: true })
     name!: string;
 
+  @Column({ length: 20, nullable: false })
+    code!: string;
+
   @Column({ nullable: true, length: 500 })
     description?: string;
-
-  @Column({ nullable: true, default: 0 })
-    level?: number;
 
   @Column({ nullable: true, default: true })
     active?: boolean;

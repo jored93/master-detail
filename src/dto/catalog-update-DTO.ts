@@ -2,7 +2,6 @@ import {
   IsBoolean,
   IsOptional,
   IsString,
-  IsNumber,
   MaxLength,
   MinLength
 } from 'class-validator';
@@ -14,11 +13,13 @@ export class CatalogUpdateDTO {
       name!: string;
 
     @IsString()
+    @MinLength(3)
+    @MaxLength(20)
+      code!: string;
+
+    @IsString()
     @MaxLength(500)
       description!: string;
-
-    @IsNumber()
-      level?: number;
 
     @IsBoolean()
     @IsOptional()
